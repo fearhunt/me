@@ -1,12 +1,12 @@
 <template>
   <header class="header">
     <div class="container header__inner">
-      <router-link to="/" class="header__brand" :aria-label="site.name">
+      <router-link to="/" class="header__brand" :aria-label="site.name" @click="scrollTopIfSame('/')">
         {{ firstName }}<span class="header__brand-rest">{{' '}} {{ restName }}</span>
       </router-link>
       <div class="header__right">
         <nav class="header__nav" aria-label="Primary">
-          <router-link v-for="link in navLinks" :key="link.to" :to="link.to" class="header__link">
+          <router-link v-for="link in navLinks" :key="link.to" :to="link.to" class="header__link" @click="scrollTopIfSame(link.to)">
             {{ link.label }}
           </router-link>
         </nav>
@@ -46,6 +46,7 @@
 
 <script setup lang="ts">
 import { site } from '@/content/site'
+import { useRoute } from 'vue-router'
 import { useTheme } from '@/composables/useTheme'
 
 const navLinks = [
@@ -56,6 +57,14 @@ const navLinks = [
 
 const [firstName, ...rest] = site.name.split(' ')
 const restName = rest.join(' ')
+
+const route = useRoute()
+
+// Clicking a link for the page you're already on isn't a navigation, so the
+// router won't scroll; do it here.
+const scrollTopIfSame = (to: string) => {
+  if (route.path === to) window.scrollTo({ top: 0, behavior: 'instant' })
+}
 
 const { isDark, toggle } = useTheme()
 </script>
