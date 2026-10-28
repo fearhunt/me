@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://firhan.id/sitemap.xml
