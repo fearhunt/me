@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          if (stored === 'light' || stored === 'dark') {
+            document.documentElement.setAttribute('data-theme', stored);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#FCFCFA" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0A1C1E" media="(prefers-color-scheme: dark)" />
+
+    <title>Firhan Mahdi Ramadhani — Product Engineer</title>
+    <meta
+      name="description"
+      content="Firhan Mahdi Ramadhani is a product engineer from Yogyakarta, Indonesia, working across product definition, frontend, full-stack, and infrastructure. This is his personal site: work, writing, and things he's building."
+    />
+    <link rel="canonical" href="https://firhan.id/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Firhan Mahdi Ramadhani" />
+    <meta property="og:title" content="Firhan Mahdi Ramadhani — Product Engineer" />
+    <meta
+      property="og:description"
+      content="Product engineer from Yogyakarta, Indonesia. Work, writing, and things he's building."
+    />
+    <meta property="og:url" content="https://firhan.id/" />
+    <meta property="og:image" content="https://firhan.id/og-image.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Firhan Mahdi Ramadhani — Product Engineer" />
+    <meta
+      name="twitter:description"
+      content="Product engineer from Yogyakarta, Indonesia. Work, writing, and things he's building."
+    />
+    <meta name="twitter:image" content="https://firhan.id/og-image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300..800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://firhan.id/#person",
+            "name": "Firhan Mahdi Ramadhani",
+            "url": "https://firhan.id/",
+            "email": "mailto:firhanmahdi@gmail.com",
+            "jobTitle": "Product Engineer",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Sleman, Yogyakarta",
+              "addressCountry": "ID"
+            },
+            "sameAs": ["https://linkedin.com/in/firhanrm"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://firhan.id/#website",
+            "url": "https://firhan.id/",
+            "name": "Firhan Mahdi Ramadhani",
+            "publisher": { "@id": "https://firhan.id/#person" }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
