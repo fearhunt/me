@@ -53,4 +53,11 @@ Most text lives in `src/content/`:
 
 ## Deployment
 
-`bun run build` outputs a fully static site to `dist/`, so it can be hosted anywhere that serves static files. Update `sitemap.xml` and `site.url` in `src/content/site.ts` if the domain changes.
+`bun run build` outputs a fully static site to `dist/`. `./deploy.sh` builds it and rsyncs it to a timestamped release under `/var/www/firhan/releases/` on `not-so-dev`, then atomically repoints the `current` symlink that nginx serves. The last 5 releases are kept.
+
+```sh
+./deploy.sh            # build and deploy
+./deploy.sh rollback   # switch back to the previous release
+```
+
+The nginx vhost lives in `deploy/nginx.conf`, with the one-time server setup and certbot steps in its header. Update `sitemap.xml` and `site.url` in `src/content/site.ts` if the domain changes.
