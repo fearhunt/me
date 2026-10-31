@@ -42,6 +42,8 @@
         :logo="item.data.logo"
         :link="item.data.link"
         :link-label="item.data.linkLabel"
+        :screenshot="item.data.screenshot"
+        :to="hasDetail(item.data.slug) ? `/work/${item.data.slug}` : undefined"
       />
     </div>
   </section>
@@ -70,6 +72,7 @@ import { useMeta } from '@/composables/useMeta'
 import { site } from '@/content/site'
 import { experience } from '@/content/experience'
 import { projects } from '@/content/projects'
+import { hasDetail } from '@/content/detail'
 import WorkEntry from '@/components/WorkEntry.vue'
 import portrait from '@/assets/portrait.webp'
 

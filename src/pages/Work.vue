@@ -22,6 +22,8 @@
         :logo="item.logo"
         :link="item.link"
         :link-label="item.linkLabel"
+        :screenshot="item.screenshot"
+        :to="hasDetail(item.slug) ? `/work/${item.slug}` : undefined"
       />
     </div>
   </section>
@@ -39,6 +41,8 @@
         :logo="item.logo"
         :link="item.link"
         :link-label="item.linkLabel"
+        :screenshot="item.screenshot"
+        :to="hasDetail(item.slug) ? `/work/${item.slug}` : undefined"
       />
     </div>
   </section>
@@ -49,6 +53,7 @@
 import { useMeta } from '@/composables/useMeta'
 import { experience } from '@/content/experience'
 import { projects } from '@/content/projects'
+import { hasDetail } from '@/content/detail'
 import WorkEntry from '@/components/WorkEntry.vue'
 
 useMeta({
