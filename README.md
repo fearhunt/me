@@ -44,6 +44,9 @@ Most text lives in `src/content/`:
 - `site.ts`: name, role, location, email and links
 - `experience.ts`: work history, shown on Work and in the About timeline
 - `projects.ts`: selected projects
+- `projects/<slug>.md` and `experience/<slug>.md`: optional write-up for an entry. Adding one makes the entry clickable and publishes it at `/work/<slug>`. `##` and `###` headings feed the glossary. Slugs must be unique across both folders.
+
+Entries (and awards in `About.vue`) also accept an optional `screenshot`; projects and experience accept a `gallery` of images, which live in `src/assets/`.
 
 ## Design notes
 
