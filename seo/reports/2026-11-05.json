@@ -5,22 +5,22 @@
   "lighthouse": {
     "mobile": {
       "scores": {
-        "performance": 90,
+        "performance": 92,
         "accessibility": 95,
         "best-practices": 100,
         "seo": 100
       },
-      "fcp": 2103.912,
-      "lcp": 3380.989,
-      "tbt": 0,
-      "cls": 0.025,
-      "ttfb": 47,
+      "fcp": 1977.306,
+      "lcp": 2963.496,
+      "tbt": 111,
+      "cls": 0.01,
+      "ttfb": 104,
       "failing": [
         "first-contentful-paint",
         "largest-contentful-paint",
+        "max-potential-fid",
         "color-contrast",
         "bf-cache",
-        "cache-insight",
         "lcp-discovery-insight",
         "network-dependency-tree-insight",
         "render-blocking-insight"
@@ -28,17 +28,19 @@
     },
     "desktop": {
       "scores": {
-        "performance": 98,
+        "performance": 92,
         "accessibility": 95,
         "best-practices": 100,
         "seo": 100
       },
-      "fcp": 637.199,
-      "lcp": 1041.419,
+      "fcp": 1115.953,
+      "lcp": 1464.769,
       "tbt": 0,
       "cls": 0.046,
-      "ttfb": 35,
+      "ttfb": 92,
       "failing": [
+        "first-contentful-paint",
+        "largest-contentful-paint",
         "color-contrast",
         "bf-cache",
         "network-dependency-tree-insight",
@@ -51,7 +53,7 @@
     "encoding": "gzip",
     "cacheControl": "no-cache",
     "xContentTypeOptions": true,
-    "refetchMs": 98
+    "refetchMs": 101
   },
   "pages": [
     {
@@ -59,18 +61,14 @@
       "status": 200,
       "title": "Firhan Mahdi Ramadhani — Product Engineer",
       "description": "Firhan Mahdi Ramadhani is a product engineer from Yogyakarta, Indonesia, working across product definition, frontend, full-stack, and infrastructure.",
-      "issues": [
-        "1 <img> without alt"
-      ]
+      "issues": []
     },
     {
       "url": "https://firhan.id/about",
       "status": 200,
       "title": "About — Firhan Mahdi Ramadhani",
       "description": "Background on Firhan Mahdi Ramadhani — how he got into product engineering, how he works, and what he's exploring now.",
-      "issues": [
-        "1 <img> without alt"
-      ]
+      "issues": []
     },
     {
       "url": "https://firhan.id/work",

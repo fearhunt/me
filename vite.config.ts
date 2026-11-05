@@ -44,6 +44,11 @@ function buildSitemap() {
 export default defineConfig({
   plugins: [vue()],
   ssgOptions: {
+    // Beasties preloads every @font-face file it finds, ignoring unicode-range,
+    // so Cyrillic/Vietnamese/latin-ext subsets were fetched on every page and
+    // competed with the LCP image. The inlined critical CSS already declares the
+    // fonts, and the browser fetches only the subsets the page actually uses.
+    beastiesOptions: { preloadFonts: false },
     onFinished() {
       writeFileSync(fileURLToPath(new URL('./dist/sitemap.xml', import.meta.url)), buildSitemap())
     },
