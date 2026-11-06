@@ -1,0 +1,77 @@
+{
+  "site": "firhan.id",
+  "url": "https://firhan.id",
+  "date": "2026-11-06",
+  "lighthouse": {
+    "mobile": {
+      "scores": {
+        "performance": 99,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "fcp": 1042.307,
+      "lcp": 1975.307,
+      "tbt": 91,
+      "cls": 0,
+      "ttfb": 54,
+      "failing": [
+        "color-contrast",
+        "bf-cache",
+        "forced-reflow-insight",
+        "image-delivery-insight",
+        "network-dependency-tree-insight"
+      ]
+    },
+    "desktop": {
+      "scores": {
+        "performance": 100,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "fcp": 258,
+      "lcp": 390,
+      "tbt": 0,
+      "cls": 0.045,
+      "ttfb": 107,
+      "failing": [
+        "color-contrast",
+        "bf-cache",
+        "image-delivery-insight",
+        "network-dependency-tree-insight",
+        "render-blocking-insight"
+      ]
+    }
+  },
+  "headers": {
+    "hsts": true,
+    "encoding": "gzip",
+    "cacheControl": "no-cache",
+    "xContentTypeOptions": true,
+    "refetchMs": 30
+  },
+  "pages": [
+    {
+      "url": "https://firhan.id/",
+      "status": 200,
+      "title": "Firhan Mahdi Ramadhani — Product Engineer",
+      "description": "Firhan Mahdi Ramadhani is a product engineer from Yogyakarta, Indonesia, working across product definition, frontend, full-stack, and infrastructure.",
+      "issues": []
+    },
+    {
+      "url": "https://firhan.id/about",
+      "status": 200,
+      "title": "About — Firhan Mahdi Ramadhani",
+      "description": "Background on Firhan Mahdi Ramadhani — how he got into product engineering, how he works, and what he's exploring now.",
+      "issues": []
+    },
+    {
+      "url": "https://firhan.id/work",
+      "status": 200,
+      "title": "Work — Firhan Mahdi Ramadhani",
+      "description": "A record of Firhan Mahdi Ramadhani's professional experience and personal projects — frontend, full-stack, and mobile work.",
+      "issues": []
+    }
+  ]
+}
