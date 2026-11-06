@@ -18,7 +18,7 @@ const sitemapPages = [
   { path: '/', source: 'src/pages/Home.vue' },
   { path: '/about', source: 'src/pages/About.vue' },
   { path: '/work', source: 'src/pages/Work.vue' },
-  { path: '/writing', source: 'src/pages/Writing.vue' },
+  // /writing is noindex until it has content, so it stays out of the sitemap.
 ]
 
 // <lastmod> is the last-commit date of the page's source file.

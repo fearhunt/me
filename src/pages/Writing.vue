@@ -19,6 +19,8 @@ useMeta({
   title: 'Writing',
   description: 'Notes and writing from Firhan Mahdi Ramadhani — coming soon.',
   path: '/writing',
+  // Placeholder until there is something to publish.
+  noindex: true,
 })
 </script>
 
