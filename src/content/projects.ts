@@ -1,3 +1,5 @@
+import type { GalleryImage } from './types'
+
 export interface ProjectEntry {
   slug: string
   title: string
@@ -8,6 +10,8 @@ export interface ProjectEntry {
   link?: string
   linkLabel?: string
   logo?: string
+  screenshot?: string
+  gallery?: GalleryImage[]
   featured: boolean
 }
 

@@ -50,11 +50,14 @@
     <h2 v-reveal class="page__subtitle">Along the way</h2>
     <ul v-reveal class="rows">
       <li v-for="award in awards" :key="award.name" class="rows__item">
-        <a v-if="award.link" :href="award.link" target="_blank" rel="noopener noreferrer" class="rows__name rows__name--link">
-          {{ award.name }}
-          <Icon name="external-link" :size="12" />
-        </a>
-        <span v-else class="rows__name">{{ award.name }}</span>
+        <span class="rows__award">
+          <img v-if="award.screenshot" :src="award.screenshot" :alt="`${award.name} screenshot`" class="rows__thumb" loading="lazy" />
+          <a v-if="award.link" :href="award.link" target="_blank" rel="noopener noreferrer" class="rows__name rows__name--link">
+            {{ award.name }}
+            <Icon name="external-link" :size="12" />
+          </a>
+          <span v-else class="rows__name">{{ award.name }}</span>
+        </span>
         <span class="rows__date">{{ award.date }}</span>
       </li>
     </ul>
@@ -99,7 +102,7 @@ const jobs = experience.map(({ slug, org, role, period }) => ({
 // record. Add a short paragraph here about personal interests / life outside
 // work if you want the page to feel more rounded — things like what you do
 // for fun, hobbies, or anything else that isn't a professional credential.
-const awards: { name: string; date: string; link?: string }[] = [
+const awards: { name: string; date: string; link?: string; screenshot?: string }[] = [
   { name: '2nd Winner, National Hackathon HackBiz — 180DC UGM', date: 'August 2021' },
   { name: '2nd Winner, National Hackathon Technoscape 4.0', date: 'July 2021' },
   { name: 'Finalist, NextDev Summit Hackathon', date: 'November 2020' },
@@ -186,6 +189,21 @@ const awards: { name: string; date: string; link?: string }[] = [
   display: block;
   color: var(--color-muted);
   font-size: 0.875rem;
+}
+
+.rows__award {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.rows__thumb {
+  flex: none;
+  width: 3.5rem;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--color-hairline);
 }
 
 .rows__name--link {

@@ -1,9 +1,10 @@
 import { createHash } from 'node:crypto'
 import { execSync } from 'node:child_process'
-import { readFileSync, writeFileSync } from 'node:fs'
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { markdown } from './plugins/markdown'
 
 // Short content hash of the CV, appended to its URL so a replaced PDF is never
 // served from a stale cache.
@@ -12,12 +13,24 @@ const cvVersion = createHash('md5')
   .digest('hex')
   .slice(0, 8)
 
+// Every content/{projects,experience}/<slug>.md becomes a /work/<slug> page.
+const detailPages = ['projects', 'experience'].flatMap((dir) =>
+  readdirSync(new URL(`./src/content/${dir}`, import.meta.url))
+    .filter((file) => file.endsWith('.md'))
+    .map((file) => ({
+      path: `/work/${file.replace(/\.md$/, '')}`,
+      source: `src/content/${dir}/${file}`,
+    })),
+)
+const detailPaths = detailPages.map((page) => page.path)
+
 const SITE_URL = 'https://firhan.id'
 
 const sitemapPages = [
   { path: '/', source: 'src/pages/Home.vue' },
   { path: '/about', source: 'src/pages/About.vue' },
   { path: '/work', source: 'src/pages/Work.vue' },
+  ...detailPages,
   // /writing is noindex until it has content, so it stays out of the sitemap.
 ]
 
@@ -42,8 +55,9 @@ function buildSitemap() {
 }
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), markdown()],
   ssgOptions: {
+    includedRoutes: (paths) => [...paths.filter((p) => !p.includes(':')), ...detailPaths],
     // Beasties preloads every @font-face file it finds, ignoring unicode-range,
     // so Cyrillic/Vietnamese/latin-ext subsets were fetched on every page and
     // competed with the LCP image. The inlined critical CSS already declares the

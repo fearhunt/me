@@ -1,3 +1,5 @@
+import type { GalleryImage } from './types'
+
 export interface ExperienceEntry {
   slug: string
   org: string
@@ -11,6 +13,8 @@ export interface ExperienceEntry {
   link?: string
   linkLabel?: string
   logo?: string
+  screenshot?: string
+  gallery?: GalleryImage[]
 }
 
 export const experience: ExperienceEntry[] = [
