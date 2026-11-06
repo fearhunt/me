@@ -1,0 +1,88 @@
+{
+  "site": "firhan.id",
+  "url": "https://firhan.id",
+  "date": "2026-11-05",
+  "lighthouse": {
+    "mobile": {
+      "scores": {
+        "performance": 92,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "fcp": 1977.306,
+      "lcp": 2963.496,
+      "tbt": 111,
+      "cls": 0.01,
+      "ttfb": 104,
+      "failing": [
+        "first-contentful-paint",
+        "largest-contentful-paint",
+        "max-potential-fid",
+        "color-contrast",
+        "bf-cache",
+        "lcp-discovery-insight",
+        "network-dependency-tree-insight",
+        "render-blocking-insight"
+      ]
+    },
+    "desktop": {
+      "scores": {
+        "performance": 92,
+        "accessibility": 95,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "fcp": 1115.953,
+      "lcp": 1464.769,
+      "tbt": 0,
+      "cls": 0.046,
+      "ttfb": 92,
+      "failing": [
+        "first-contentful-paint",
+        "largest-contentful-paint",
+        "color-contrast",
+        "bf-cache",
+        "network-dependency-tree-insight",
+        "render-blocking-insight"
+      ]
+    }
+  },
+  "headers": {
+    "hsts": false,
+    "encoding": "gzip",
+    "cacheControl": "no-cache",
+    "xContentTypeOptions": true,
+    "refetchMs": 101
+  },
+  "pages": [
+    {
+      "url": "https://firhan.id/",
+      "status": 200,
+      "title": "Firhan Mahdi Ramadhani — Product Engineer",
+      "description": "Firhan Mahdi Ramadhani is a product engineer from Yogyakarta, Indonesia, working across product definition, frontend, full-stack, and infrastructure.",
+      "issues": []
+    },
+    {
+      "url": "https://firhan.id/about",
+      "status": 200,
+      "title": "About — Firhan Mahdi Ramadhani",
+      "description": "Background on Firhan Mahdi Ramadhani — how he got into product engineering, how he works, and what he's exploring now.",
+      "issues": []
+    },
+    {
+      "url": "https://firhan.id/work",
+      "status": 200,
+      "title": "Work — Firhan Mahdi Ramadhani",
+      "description": "A record of Firhan Mahdi Ramadhani's professional experience and personal projects — frontend, full-stack, and mobile work.",
+      "issues": []
+    },
+    {
+      "url": "https://firhan.id/writing",
+      "status": 200,
+      "title": "Writing — Firhan Mahdi Ramadhani",
+      "description": "Notes and writing from Firhan Mahdi Ramadhani — coming soon.",
+      "issues": []
+    }
+  ]
+}

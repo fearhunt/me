@@ -1,6 +1,6 @@
 <template>
   <div class="page-root">
-  <section v-reveal class="hero container">
+  <section class="hero container">
     <div class="hero__text">
       <p class="hero__eyebrow">{{ site.role }} · {{ site.location }}</p>
       <h1 class="hero__statement">
@@ -17,7 +17,7 @@
       </div>
     </div>
     <figure class="hero__figure" aria-hidden="true">
-      <img :src="portrait" alt="" width="720" height="720" decoding="async" />
+      <img :src="portrait" alt="" width="720" height="720" fetchpriority="high" decoding="async" />
     </figure>
   </section>
 
