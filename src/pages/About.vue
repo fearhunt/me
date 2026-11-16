@@ -74,6 +74,7 @@
 </template>
 
 <script setup lang="ts">
+import { useHead } from '@unhead/vue'
 import { useMeta } from '@/composables/useMeta'
 import { site } from '@/content/site'
 import { experience } from '@/content/experience'
@@ -85,6 +86,23 @@ useMeta({
   description:
     "Background on Firhan Mahdi Ramadhani — how he got into product engineering, how he works, and what he's exploring now.",
   path: '/about',
+})
+
+// ProfilePage markup tying this page to the Person entity declared in index.html.
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ProfilePage',
+        '@id': 'https://firhan.id/about#profilepage',
+        url: 'https://firhan.id/about',
+        name: 'About — Firhan Mahdi Ramadhani',
+        mainEntity: { '@id': 'https://firhan.id/#person' },
+      }),
+    },
+  ],
 })
 
 // "April 2026 — Current" -> "Apr 2026 — Now"
