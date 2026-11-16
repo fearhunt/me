@@ -7,8 +7,7 @@ export const site = {
   url: 'https://firhan.id',
   links: {
     linkedin: 'https://linkedin.com/in/firhanrm',
-    // TODO: add GitHub profile URL once confirmed
-    github: '',
+    github: 'https://github.com/fearhunt',
     // The version query changes whenever the PDF does, so it is never served stale.
     cv: `/cv/firhan-ramadhani-cv.pdf?v=${__CV_VERSION__}`,
   },
