@@ -13,6 +13,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSy
 import { homedir, tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { fetchGsc, gscMarkdown, summarizeGsc } from './gsc.mjs'
 
 const dir = dirname(fileURLToPath(import.meta.url))
 const reportsDir = join(dir, 'reports')
@@ -103,6 +104,7 @@ const report = {
   lighthouse: { mobile: lighthouse('mobile'), desktop: lighthouse('desktop') },
   headers: await headers(),
   pages: await Promise.all(urls.map(checkPage)),
+  gsc: summarizeGsc(await fetchGsc(config, { snapshotDir: join(dir, 'gsc'), date: today })),
 }
 writeFileSync(join(reportsDir, `${today}.json`), JSON.stringify(report, null, 2) + '\n')
 
@@ -136,7 +138,6 @@ HSTS: ${report.headers.hsts ? 'yes' : '**missing**'} · compression: ${report.he
 ${pageIssues.length ? pageIssues.map((p) => `- ${p.url}: ${p.issues.join('; ')}`).join('\n') : 'No on-page issues found.'}
 
 ## Search Console
-_Not connected yet. Add \`seo/gsc.json\` data or an export to include clicks, impressions, CTR and position._
-`
+${gscMarkdown(report.gsc, previous?.gsc)}`
 writeFileSync(join(reportsDir, `${today}.md`), md)
 console.log(md)

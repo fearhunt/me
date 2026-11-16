@@ -4,3 +4,5 @@ dist
 *.local
 .vite
 seo/reports/claude.log
+*.key.json
+seo/*key*.json
