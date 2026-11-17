@@ -13,7 +13,7 @@ after=$(ls seo/reports/*.json 2>/dev/null | sort | tail -1 || true)
 if [ "$before" != "$after" ] || [ "${1:-}" = "--force" ]; then
   claude -p "$(cat seo/WEEKLY.md)" \
     --allowedTools "Read" "Edit" "Write" "WebSearch" "WebFetch" \
-      "Bash(git status:*)" "Bash(git diff:*)" "Bash(git log:*)" "Bash(git checkout -b:*)" "Bash(git add:*)" "Bash(git commit:*)" \
+      "Bash(git status:*)" "Bash(git diff:*)" "Bash(git log:*)" "Bash(git checkout -b:*)" "Bash(git add:*)" "Bash(git commit:*)" "Bash(git push:*)" "Bash(git checkout main)" "Bash(git pull:*)" "Bash(git branch -d:*)" "Bash(gh pr:*)" \
       "Bash(bun run build:*)" "Bash(ls:*)" \
     >> seo/reports/claude.log 2>&1 || echo "claude review failed, see seo/reports/claude.log"
 fi

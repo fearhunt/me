@@ -3,6 +3,6 @@
   "url": "https://firhan.id",
   "gsc": {
     "property": "sc-domain:firhan.id",
-    "keyFile": "~/.config/seo/gsc-key.json"
+    "keyFile": "~/.config/seo/firhan-gsc-key.json"
   }
 }
