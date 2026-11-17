@@ -2,7 +2,8 @@
 // Zero dependencies: signs the service-account JWT with node:crypto.
 //
 // Config (seo/config.json):
-//   "gsc": { "property": "sc-domain:firhan.id", "keyFile": "~/.config/seo/gsc-key.json" }
+//   "gsc": { "property": "sc-domain:firhan.id", "keyFile": "~/.config/seo/firhan-gsc-key.json" }
+// Key path: GSC_KEY_FILE (env) wins over keyFile. Keep one key file per site so sites never share a path.
 // `property` is "sc-domain:<domain>" for a Domain property, or the full URL
 // ("https://firhan.id/") for a URL-prefix property. GSC_KEY_FILE overrides keyFile.
 //

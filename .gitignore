@@ -6,3 +6,6 @@ dist
 seo/reports/claude.log
 *.key.json
 seo/*key*.json
+
+seo/*key*.json
+*.key.json
